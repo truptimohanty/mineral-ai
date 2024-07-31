@@ -1,0 +1,202 @@
+﻿Query,source,Ground Truth,answers
+What is the production HHI of Rhenium in 2021?,Production CSV ,The production HHI of Rhenium in 2021 is 3025.646653,The production HHI of Rhenium in 2021 is 3025.646653
+Which countries have production market share for Platinum in 2022?,Production CSV,"Countries with production market share for platinum in 2022 are:                                                                                                                                        countries : market share (%)                                                                                                                                                                                                                   Australia : 0.051580956 %
+Canada : 3.094857379 %
+China: 1.604740863 %
+Colombia: 0.229248695%
+Ethiopia : 0.017193652 %
+Finland:  0.712390319 %
+Russia: 11.46243474 %
+Serbia: 0.008596826
+South Africa: 71.29691718 %
+United States: 1.71936521 %
+Zimbabwe: 9.802674186 %","Based on the provided data, the countries with production market share for Platinum in 2022 are:
+
+South Africa - 71.29691718%
+United States - 1.71936521%
+Canada - 3.094857379%
+Zimbabwe - 9.802674186%
+Other countries - 2.628571429%
+Note that the market share percentages are based on the total production of Platinum in 2022, which is 174.483 units.
+"
+What is the reserve base of Aluminum  globally?,mcs2023-aluminum.pdf,Global resources of bauxite are estimated to be between 55 billion and 75 billion tons and are sufficient to meet world demand for metal well into the future.,"According to the provided data, the global reserve base of Aluminum is not explicitly mentioned. However, it is mentioned that global resources of bauxite are estimated to be between 55 to 75 billion tons and are sufficient to meet world demand for metal well into the future."
+Which countries are the leading producer of Nb in 2023?,Production CSV ," Following Countries are the  leading producer of Nb in 2023.                            Brazil : 75000 tons
+Canada 7000 tons
+Congo, Kinshasa: 540 tons
+Russia: 440 tons
+Rwanda: 190 tons
+Other Countries: 150 tons","According to the provided information, the leading producers of Niobium (Nb) in 2023 are:
+
+Brazil: with a production of 75,000 tons, accounting for approximately 90% of global production.
+Canada: with a production of 7,000 tons, accounting for approximately 8% of global production.
+Congo (Kinshasa): with a production of 540 tons, accounting for approximately 0.648% of global production.
+Other Countries: with a production of 150 tons, accounting for approximately 0.180% of global production.
+Note that the production figures are based on the provided data and may not reflect the actual global production of Niobium."
+What are the recycling resources available for Copper in 2023?,mcs2024-copper.pdf,"Recycling: Old (post-consumer) scrap, converted to refined metal, alloys, and other forms provided an estimated
+150,000 tons of copper in 2023, and an estimated 700,000 tons of copper was recovered from new (manufacturing) scrap derived from fabricating operations. Of the total copper recovered from scrap, brass and wire-rod mills accounted for approximately 80%. Copper recovered from scrap contributed 33% of the U.S. copper supply.","Recycling resources available for Copper in the United States in 2023 include:
+
+Old (post-consumer) scrap: This type of scrap is converted to refined metal, alloys, and other forms, and provided an estimated 150,000 tons of copper in 2023.
+New (manufacturing) scrap: This type of scrap is derived from fabricating operations and yielded an estimated 700,000 tons of copper in 2023.
+Brass and wire-rod mills: These mills accounted for approximately 80% of the total copper recovered from scrap.
+Copper recovered from scrap contributed 33% of the U.S. copper supply."
+What was the price of Silver in 2020?,mcs2021-silver.pdf,"Silver Price, bullion, average, dollars per troy ounce: $20 in 2020.","According to the provided information, the average price of Silver in 2020 was $20.00 per troy ounce, which is 16% higher than the average price in 2019."
+What substitutes are available for Chromium in 2022?,mcs2023-chromium.pdf,"Chromium has no substitute in stainless steel, the leading end use, or in superalloys, the major strategic end use. Chromium-containing scrap can substitute for ferrochromium in some metallurgical uses. ","There are no substitutes available for Chromium in the steel industry in 2022. Chromium has no substitute in stainless steel, the leading end use, or in superalloys, the major strategic end use. Chromium-containing scrap can substitute for ferrochromium in some metallurgical uses."
+What is the global production of Aluminum in 2021?,Production CSV , The global production of aluminum in 2021 was 67510000 tons.,"According to the provided data, the global production of aluminum in 2021 was 67,510,000 tons."
+Briefly explain about Domestic Production and Use of rare earth metals in 2023?,mcs2024-rareearths.pdf,"Domestic Production and Use: Rare earths were mined domestically in 2023. Bastnaesite (or bastnäsite), a rare- earth fluorocarbonate mineral, was mined as a primary product at a mine in Mountain Pass, CA. Monazite, a phosphate mineral, was stockpiled as a separated concentrate or included as an accessory mineral in heavy-mineral- sand concentrates in the southeastern United States. Mixed rare-earth compounds were also produced in the western United States. The estimated value of rare-earth compounds and metals imported by the United States in 2023 was $190 million, a 7% decrease from $208 million in 2022. The estimated leading domestic end use of rare earths was catalysts. Significant amounts of rare earths are imported as permanent magnets embedded in finished goods. Other end uses were ceramics and glass, metallurgical applications and alloys, and polishing.","Domestic Production and Use of Rare Earth Metals in 2023:
+
+Rare earths were mined domestically in 2023. Bastnaesite (or bastnäsite), a rare-earth fluorocarbonate mineral, was mined as a primary product at a mine in Mountain Pass, CA. Monazite, a phosphate mineral, was stockpiled as a separated concentrate or included as an accessory mineral in heavy-mineral-sand concentrates in the southeastern United States. Mixed rare-earth compounds were also produced in the western United States.
+
+The estimated value of rare-earth compounds and metals imported by the United States in 2023 was $190 million, a 7% decrease from $208 million in 2022. The estimated leading domestic end use of rare earths was catalysts. Significant amounts of rare earths are imported as permanent magnets embedded in finished goods. Other end uses were ceramics and glass, metallurgical applications and alloys, and polishing.
+
+The total production of rare earths in the United States in 2023 was 43,000 metric tons, with a market share of 12.17%. The production HHI (Herfindahl-Hirschman Index) was 4909.19.
+
+Here is a breakdown of the production and imports of rare earths in the United States in 2023:
+
+Domestic production: 43,000 metric tons
+Imports: $190 million
+Leading domestic end use: Catalysts
+Other end uses: Ceramics and glass, metallurgical applications and alloys, and polishing
+Market share: 12.17%
+Production HHI: 4909.19"
+Which country has the highest reserve of Lithium in 2023?,Reserve CSV,"Australia holds the largest reserve of Lithium, totaling 62,000,000 tons as of 2023.","According to the provided data, the country with the highest reserve of Lithium in 2023 is Australia, with a total reserve of 62,000,000 tons"
+What was the price trend for rare earths from 2021 to 2023?,mcs2024-rareearths.pdf,"Rare Earths Price, average, dollars per kilogram:
+Cerium Oxide, 99.5%minimum, $2  in 2021, $1 in 2022, and  $1  in 2023.                                                                                                                       Dysprosium Oxide,  99.5%minimum, $410 in 2021, $382 in 2022,  and $323 in 2023.
+Europium oxide, 99.99% minimum,  $31 2021, $30 in 2022, and $27 in 2023.
+Lanthanum oxide, 99.5% minimum,  $2 in 2021, $1 in 2022, and $1 in 2023.
+Mischmetal, 65% cerium, 35% lanthanum, $6 in 2021,  $7 in 2022, and  $5 in 2023.
+Neodymium oxide, 99.5% minimum, $98 in 2021, $134 in 2022, and $80 in 2023.
+Terbium oxide, 99.99% minimum, $1,346 in 2021,  $2,051 in 2022, and $1,300 in 2023.
+","The historical price trend for rare earths from 2021 to 2023 is as follows:
+Cerium oxide: The price remained stable at $2 from 2021 to 2022, and then decreased to $1 in 2023.
+Dysprosium oxide: The price increased from $410 in 2021 to $382 in 2022, and then decreased to $323 in 2023.
+Europium oxide: The price decreased from $31 in 2021 to $30 in 2022, and then decreased to $27 in 2023.
+Lanthanum oxide: The price remained stable at $2 from 2021 to 2022, and then decreased to $1 in 2023.
+Mischmetal: The price increased from $6 in 2021 to $7 in 2022, and then remained stable at $7 in 2023.
+Neodymium oxide: The price increased significantly from $98 in 2021 to $134 in 2022, and then decreased to $80 in 2023.
+Terbium oxide: The price increased from $1,346 in 2021 to $2,051 in 2022, and then decreased to $1,300 in 2023.
+Overall, the prices of rare earths have been fluctuating over the past few years, with some prices increasing significantly while others have decreased.
+"
+"What are the Events, Trends, and Issues associated with Lithium in 2023?",mcs2024-lithium.pdf,"Events, Trends, and Issues: Excluding U.S. production, worldwide lithium production in 2023 increased by 23% to approximately 180,000 tons from 146,000 tons in 2022 in response to strong demand from the lithium-ion battery market. Global consumption of lithium in 2023 was estimated to be 180,000 tons, a 27% increase from the revised consumption figure of 142,000 tons in 2022. However, concern of a short-term lithium oversupply, expiration of the Chinese Government’s decade-long program of subsidies for electric vehicle (EV) purchases, and weaker-than- expected EV sales worldwide caused the price of lithium to decrease considerably in 2023.
+Spot lithium carbonate prices in China [cost, insurance, and freight (c.i.f.)] decreased from approximately $76,000 per ton in January to about $23,000 per ton in November. For fixed contracts, the annual average U.S. lithium carbonate price was $46,000 per ton in 2023, a decrease of 32% from that in 2022. Spot lithium hydroxide prices in China
+(c.i.f. China) decreased from approximately $81,500 per ton in January to about $22,500 per ton in November. Spodumene (6% lithium oxide) prices in Australia (free on board) decreased from approximately $6,000 per ton in January to about $2,500 per ton in November.
+Seven mineral operations in Australia, one mineral tailings operation in Brazil, two brine operations each in Argentina and Chile, two mineral operations in Canada, five mineral and four brine operations in China, and one mineral operation in Zimbabwe accounted for the majority of world lithium production. Additionally, smaller operations in Argentina, Australia, Brazil, China, Portugal, the United States, and Zimbabwe also contributed to world lithium production. Owing to the rapid increase in demand of lithium in 2023, established lithium operations worldwide increased or were in the process of increasing production capacity.
+In 2022, the U.S. Department of Energy selected 12 lithium-based projects funded with $1.6 billion from the 2022 U.S. Bipartisan Infrastructure Law to support new commercial-scale domestic facilities to extract and process lithium, manufacture battery components, recycle batteries, and develop new technologies to increase U.S. lithium reserves. The 2022 U.S. Inflation Reduction Act added tax incentives to consolidate sourcing of battery materials and manufacturing of EVs to North American and U.S.-partner countries.
+Lithium supply security has become a top priority for technology companies in Asia, Europe, and North America. Strategic alliances and joint ventures among technology companies and exploration companies continued to be established to ensure a reliable, diversified supply of lithium for battery suppliers and vehicle manufacturers. Brine-based lithium sources were in various stages of development or exploration in Argentina, Bolivia, Canada, Chile, China, and the United States; mineral-based lithium sources were in various stages of development or exploration in Australia, Austria, Brazil, Canada, China, Congo (Kinshasa), Czechia, Ethiopia, France, Finland, Germany, Ghana, India, Iran, Kazakhstan, Mali, Namibia, Nigeria, Peru, Portugal, Russia, Rwanda, Serbia, Spain, Thailand, Turkey, the United States, and Zimbabwe; lithium-clay sources were in various stages of development or exploration in Mexico and the United States.","Key Events, Trends, and Issues associated with Lithium in 2023:
+
+Global Lithium Production: Worldwide lithium production in 2023 increased by 23% to approximately 180,000 tons from 146,000 tons in 2022 in response to strong demand from the lithium-ion battery market.
+Global Lithium Consumption: Global consumption of lithium in 2023 was estimated to be 180,000 tons, a 27% increase from the revised consumption figure of 142,000 tons in 2022.
+Lithium Price: Spot lithium carbonate prices in China decreased from approximately $76,000 per ton in January to about $23,000 per ton in November, due to concern of a short-term lithium oversupply, expiration of the Chinese Government's decade-long program of subsidies for electric vehicle (EV) purchases, and weaker-than-expected EV sales worldwide.
+Recycling: Construction of lithium battery recycling plants increased at a rapid pace, with about 40 companies in Canada and the United States and 50 companies in Europe recycled lithium batteries or planned to do so.
+Import Sources: Argentina, Chile, China, Russia, and other countries continued to be the main import sources for the United States, with Argentina accounting for 51% of imports, Chile for 43%, and China for 3%.
+Government Stockpile: There is no information available on the government stockpile of lithium.
+Potential Disposals: There were no potential disposals listed for any of the materials across both fiscal years.
+These events, trends, and issues highlight the significant changes in the lithium market in 2023, including increased production and consumption, decreased prices, and increased recycling efforts."
+What is the reserve HHI of Tungsten in 2021?,Reserve CSV,The HHI of Tungsten reserves in 2021 is 3823.740328,The Herfindahl-Hirschman Index (HHI) of Tungsten reserves in 2021 is 3823.740328.
+Which country has the largest reserve of Molybdenum as per 2023?,Reserve CSV,"
+China has the largest reserve of Molybdenum in 2023 with 5800000  tons.	","Based on the provided information, the country with the largest reserve of Molybdenum as of 2023 is China, with a reserve of 5,800,000 tons, which accounts for 39.82% of the total global reserves."
+What is the market share of China in Rare Earth Elements production?,Production CSV,The market share of China in Rare Earth Elements production in 2023 is 67.92709159%.,"According to the provided information, the market share of China in Rare Earth Elements production in 2023 is 67.92709159%."
+What are the primary substitutes for Cobalt in lithium-ion battery manufacturing?,mcs2024-cobalt.pdf,"Substitutes: Depending on the application, substitution for cobalt could result in a loss in product performance or increase cost. The cobalt contents of lithium-ion batteries, the leading global use for cobalt, are being reduced; cobalt- free substitutes that use iron and phosphorus held significant market share in China","The primary substitutes for Cobalt in battery manufacturing, specifically in lithium-ion batteries, are:
+
+Iron and Phosphorus: These elements can be used to create cobalt-free substitutes for lithium-ion batteries.
+Note that the suitability of these substitutes may vary depending on the specific application and the desired performance characteristics."
+What is the reserve base of Titanium globally as of 2023?,Reserve CSV,The global reserve base of Titanium in 2023 is 750060000 tons.,"According to the provided data, the global titanium reserve base as of 2023 is 750,060,000 units."
+What recycling options are available for Platinum group metals?,mcs2024-platinumgroup.pdf,"About 120,000 kilograms of palladium and platinum were recovered globally from new and old scrap in 2023, including about 42,000 kilograms of palladium and 9,000 kilograms of platinum recovered from automobile catalytic converters in the United States. ","Recycling options for Platinum group metals (PGMs) in 2023 include:
+
+Automobile catalytic converters: PGMs are recovered from the converters of end-of-life vehicles, which are then recycled and reused in various applications.
+Jewelry and coins: PGMs are recovered from scrap jewelry and coins, which are then recycled and reused in various applications.
+Industrial processes: PGMs are recovered from industrial processes, such as petroleum refining, chemical processing, and glass manufacturing, where they are used as catalysts or additives.
+Electronic waste: PGMs are recovered from electronic waste, such as computers, smartphones, and other electronic devices, which contain PGMs in their components.
+Refining and smelting: PGMs are recovered from ores and concentrates through refining and smelting processes, which involve heating and melting the materials to extract the PGMs.
+In 2023, about 120,000 kilograms of palladium and platinum were recovered globally from new and old scrap, including about 42,000 kilograms of palladium and 9,000 kilograms of platinum recovered from automobile catalytic converters in the United States."
+What is the Domestic production and use of Antimony in 2023?,mcs2024-antimony.pdf,"Domestic Production and Use of Antimony: In 2023, no marketable antimony was mined in the United States. Primary antimony metal and oxide were produced by one company in Montana using imported feedstock; data were not available. Secondary antimony production was derived mostly from antimonial lead recovered from spent lead-acid batteries. The estimated value of secondary antimony produced in 2023 was about $49 million. Recycling supplied about 18% of estimated domestic apparent consumption, and the remainder came mostly from imports. In the United States, the leading uses of antimony were metal products, including antimonial lead and ammunition, 43%; flame retardants, 35%; and nonmetal products, including ceramics and glass and rubber products, 22%.","According to the provided data, in 2023, no marketable antimony was mined in the United States. Primary antimony metal and oxide were produced by one company in Montana using imported feedstock. Secondary antimony production was derived mostly from antimonial lead recovered from spent lead-acid batteries. The estimated value of secondary antimony produced in 2023 was about $49 million. Recycling supplied about 18% of estimated domestic consumption, and the remainder came mostly from imports."
+What is the market share of Russia in Palladium production?,Production CSV, The market share of Russia in Palladium production in 2023 is 44.55205811%,"According to the provided data, the market share of Russia in Palladium production in 2023 is 44.55205811%."
+What is the production capacity of Canada for Cobalt?,Production CSV,"The production capacity of Canada for Cobalt in 2023 is 2,100 tons.","According to the provided data, the production capacity of Canada for Cobalt in 2023 is 2,100 tons."
+What are the recycling resources available for Rare Earths?,mcs2024-rareearths.pdf,"Recycling: Limited quantities of rare earths are recovered from batteries, permanent magnets, and fluorescent lamps. ","Recycling resources available for Rare Earths in the current year (2023) include:
+
+Recycling of Rare Earths from batteries
+Recycling of Rare Earths from permanent magnets
+Recycling of Rare Earths from fluorescent lamps
+These recycling resources are limited, and the majority of Rare Earths are still obtained through primary production and imports."
+What substitutes are available for Beryllium?,mcs2024-beryllium.pdf,"Substitutes: Because the cost of beryllium is high compared with that of other materials, it is used in applications in which its properties are crucial. In some applications, certain metal matrix or organic composites, high-strength grades of aluminum, pyrolytic graphite, silicon carbide, steel, or titanium may be substituted for beryllium metal or beryllium composites. Copper alloys containing nickel and silicon, tin, titanium, or other alloying elements or phosphor bronze alloys (copper-tin-phosphorus) may be substituted for beryllium-copper alloys, but these substitutions can result in substantially reduced performance. Aluminum nitride or boron nitride may be substituted for beryllium oxide.","According to the provided data, the substitutes available for Beryllium in aerospace applications in 2023 are:
+
+Metal matrix or organic composites
+High-strength grades of aluminum
+Pyrolytic graphite
+Silicon carbide
+Steel
+Titanium
+Copper alloys containing nickel and silicon, tin, titanium, or other alloying elements
+Phosphor bronze alloys (copper-tin-phosphorus)
+Aluminum nitride or boron nitride"
+Show me the production trend of Beryllium in the USA from 2020 to 2023.,Production CSV,"The production trend of Beryllium in USA from 2020 to 2023:                          year: tons                                                                                                                                             2020: 150 tons
+2021: 170 tons
+2022: 180 tons
+2023: 190 tons","According to the provided data, the production trend of Beryllium in the USA from 2020 to 2023 is as follows:
+
+2020: 150 tons
+2021: 170 tons
+2022: 180 tons
+2023: 190 tons
+The production has been increasing steadily over the years, with a slight decrease in 2020 and then a steady increase in subsequent years."
+"What are the Events, Trends, and Issues associated with Tungsten?",mcs2024-tungsten.pdf,"Events, Trends, and Issues: World tungsten supply was dominated by production in China and exports from China. Production of tungsten concentrate outside China was estimated to have increased in 2023 but remained less than 20% of world production. The increase was from existing operations and from the restart of production from a historic mine in Australia. Additional production, primarily from mines in the Republic of Korea, Russia, Spain, and the United Kingdom, was forecast to begin within a year or two. Scrap continued to be an important source of raw material for the world tungsten industry.
+Tungsten consumption is strongly influenced by economic conditions and industrial activity. China continued to be the world’s leading tungsten consumer. In 2023, global tungsten consumption was forecast to decrease slightly from that in 2022.","Events, Trends, and Issues associated with Tungsten in the USA in 2023:
+
+World tungsten supply was dominated by production in China and exports from China.
+Production of tungsten concentrate outside China was estimated to have increased in 2023 but remained less than 20% of world production.
+Scrap continued to be an important source of raw material for the world tungsten industry.
+Tungsten consumption is strongly influenced by economic conditions and industrial activity.
+China continued to be the world's leading tungsten consumer.
+In the United States, increased oil and gas drilling and a recovery of the aerospace industry resulted in an estimated increase in tungsten consumption.
+Potential areas of future growth in tungsten consumption include new applications such as powders for additive manufacturing and the use of tungsten in lithium-ion batteries.
+The estimated value of apparent consumption in 2023 was withheld to avoid disclosing company proprietary data.
+Note: The data provided does not contain specific information on tungsten production in the USA. The data only includes information on tungsten production in other countries."
+Provide detailed information on the USA's imports and exports of Lithium for the year 2023.,mcs2024-lithium.pdf," Below are the details of the USA's imports and exports of Lithium for the year 2023. Imports: 3400 tons, Exports: 2300 tons, Net import reliance greater than 25%. Import sources: Argentina, 51%; Chile, 43%; China, 3%; Russia, 2%; and other, 1%.","Based on the provided information, here are the details on the USA's imports and exports of Lithium for the year 2023:
+
+Imports: The imports of Lithium in the United States increased to 3,400 metric tons in 2023, up from 3,270 metric tons in 2022. The main sources of Lithium imports in 2023 were Argentina (51%), Chile (43%), China (3%), Russia (2%), and other countries (1%).
+
+Exports: The exports of Lithium from the United States decreased to 2,300 metric tons in 2023, down from 2,440 metric tons in 2022. The decrease in exports was likely due to the increase in imports and the decrease in domestic consumption.
+
+Price: The price of battery-grade Lithium carbonate in the United States decreased to $46,000 per metric ton in 2023, down from $68,100 per metric ton in 2022. This decrease was likely due to the increase in global supply and the decrease in demand.
+
+Employment: The employment number in the Lithium mining and milling industry in the United States remained constant at 70 from 2019 to 2023.
+
+Net Import Reliance: The net import reliance of the United States as a percentage of apparent consumption was greater than 25% for all years from 2019 to 2023, indicating that the country relies heavily on imports to meet its Lithium demand.
+
+I hope this information is helpful. Let me know if you have any further questions!
+"
+Does India produce Manganese? What has been its production capacity from 2020 to 2023?,Production CSV,"Yes, India produces manganese. The production capacity of India for manganese from the year 2020 to 2023 are as follows.                                         year: tons
+2020: 640,000 tons
+2021: 600,000 tons
+2022: 480,000 tons
+2023: 720,000 tons","Yes, India does produce manganese. According to the provided data, India's average annual production capacity from 2020 to 2023 is as follows:
+
+2020: 640,000 tons
+2021: 600,000 tons
+2022: 480,000 tons
+2023: 720,000 tons
+Note that the production data is based on the provided JSON data and may not reflect the actual production capacity of India."
+What was the price for platinum group metals in 2023?,mcs2024-platinum.pdf,"Platinum-Group metals Price, dollars per troy ounce:                                                                                                                                                                 Palladium:$1500
+Platinum: $1,000 
+Iridium: $4,600 
+Rhodium: $7,700 
+Ruthenium: $470 
+","According to the provided information, the current price of platinum group metals in 2023 is as follows:
+
+Platinum: $1,000 per troy ounce
+Palladium: $1,500 per troy ounce
+Iridium: $4,600 per troy ounce
+Rhodium: $7,700 per troy ounce
+Ruthenium: $470 per troy ounce
+Please note that these prices are based on the provided data and may not reflect the current market prices."
+What is the percentage of production market share of Indonesia for Vanadium in 2023?,Production CSV, Indonesia's production market share for vanadium in 2023 is not available.,"According to the provided data, the production market share of Indonesia for vanadium in 2023 is not explicitly mentioned. However, I can infer that Indonesia's production market share for vanadium in 2023 is not available in the provided data.
+"
+What is the production trend of lead in Russia from 2020 to 2023?,Production CSV,"The production trend of lead in Russia from 2020 to 2023 is as follows:                                                                                                                                  year : tons                                                                                                                                                                                                                                                                         2020: 200,700 tons
+2021: 200,000 tons
+2022: 200,000 tons
+2023: 200,000 tons","According to the provided information, the production trend of lead in Russia from 2020 to 2023 is as follows:
+
+2020: 200,700 tons
+2021: 200,000 tons
+2022: 200,000 tons
+2023: 200,000 tons (with a slight decrease from 2022)
+Please note that the production trend shows a slight decrease from 2020 to 2022, and then remains steady at 200,000 tons in 2023."

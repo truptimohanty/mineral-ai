@@ -1,0 +1,778 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Global Mineral Commodities</title>
+    <meta name="viewport" content="initial-scale=1" />
+    <meta name="description" content="Interactive periodic table with expandable information on all elements.">
+    <!-- build:css assets/css/screen.min.css -->
+    <link rel="stylesheet" type="text/css" href="static/app.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- /build -->
+
+    <script type="text/javascript" src="static/papaparse.js"></script>
+    <script src="static/plotly-2.14.0.min.js"></script>
+    <script src="static/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <!-- Compressed CSS -->
+
+</head>
+
+<body id="page-top" class="index" data-pinterest-extension-installed="cr1.3.4">
+    <nav id="navbar" class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <!-- <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <a class="navbar-brand page-scroll" href="#page-top">Comprehensive Insights into Global Mineral Commodities: <span class="navbar-brand-sub">Analysis, Visualization, and Intelligent Assistance</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div> -->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section id="services">
+        <div class="row fromtop" style="margin-top: 50px;">
+            
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-7 col-sm-12">
+                <div class="row" style="text-align:center;">
+                    <div class="col-md-12 col-centered">
+                    <div id="periodic-table">
+                        <div id="H_ele" title="Hydrogen" class="element element-1 polyatomic nonmetal ">
+                            <div class="number">1</div>
+                            <div class="symbol">H</div>
+                            <div class="element-name">Hydrogen</div>
+                        </div>
+                        <div id="He_ele" title="Helium" class="element element-2 noble gas ">
+                            <div class="number">2</div>
+                            <div class="symbol">He</div>
+                            <div class="element-name">Helium</div>
+                        </div>
+                        <div id="Li_ele" title="Lithium" class="element element-3 alkali metal ">
+                            <div class="number">3</div>
+                            <div class="symbol">Li</div>
+                            <div class="element-name">Lithium</div>
+                        </div>
+                        <div id="Be_ele" title="Beryllium" class="element element-4 alkaline earth metal ">
+                            <div class="number">4</div>
+                            <div class="symbol">Be</div>
+                            <div class="element-name">Beryllium</div>
+                        </div>
+                        <div id="HB_ele" title="Boron" class="element element-5 metalloid ">
+                            <div class="number">5</div>
+                            <div class="symbol">B</div>
+                            <div class="element-name">Boron</div>
+                        </div>
+                        <div id="C_ele" title="Carbon" class="element element-6 polyatomic nonmetal ">
+                            <div class="number">6</div>
+                            <div class="symbol">C</div>
+                            <div class="element-name">Carbon</div>
+                        </div>
+                        <div id="N_ele" title="Nitrogen" class="element element-7 diatomic nonmetal ">
+                            <div class="number">7</div>
+                            <div class="symbol">N</div>
+                            <div class="element-name">Nitrogen</div>
+                        </div>
+                        <div id="O_ele" title="Oxygen" class="element element-8 diatomic nonmetal ">
+                            <div class="number">8</div>
+                            <div class="symbol">O</div>
+                            <div class="element-name">Oxygen</div>
+                        </div>
+                        <div id="F_ele" title="Fluorine" class="element element-9 halogen nonmetal ">
+                            <div class="number">9</div>
+                            <div class="symbol">F</div>
+                            <div class="element-name">Fluorine</div>
+                        </div>
+                        <div id="Ne_ele" title="Neon" class="element element-10 noble gas ">
+                            <div class="number">10</div>
+                            <div class="symbol">Ne</div>
+                            <div class="element-name">Neon</div>
+                        </div>
+                        <div id="Na_ele" title="Sodium" class="element element-11 alkali metal ">
+                            <div class="number">11</div>
+                            <div class="symbol">Na</div>
+                            <div class="element-name">Sodium</div>
+                        </div>
+                        <div id="Mg_ele" title="Magnesium" class="element element-12 alkaline earth metal ">
+                            <div class="number">12</div>
+                            <div class="symbol">Mg</div>
+                            <div class="element-name">Magnesium</div>
+                        </div>
+                        <div id="Al_ele" title="Aluminium" class="element element-13 post-transition metal ">
+                            <div class="number">13</div>
+                            <div class="symbol">Al</div>
+                            <div class="element-name">Aluminium</div>
+                        </div>
+                        <div id="Si_ele" title="Silicon" class="element element-14 metalloid ">
+                            <div class="number">14</div>
+                            <div class="symbol">Si</div>
+                            <div class="element-name">Silicon</div>
+                        </div>
+                        <div id="P_ele" title="Phosphorus" class="element element-15 polyatomic nonmetal ">
+                            <div class="number">15</div>
+                            <div class="symbol">P</div>
+                            <div class="element-name">Phosphorus</div>
+                        </div>
+                        <div id="S_ele" title="Sulfur" class="element element-16 polyatomic nonmetal ">
+                            <div class="number">16</div>
+                            <div class="symbol">S</div>
+                            <div class="element-name">Sulfur</div>
+                        </div>
+                        <div id="Cl_ele" title="Chlorine" class="element element-17 halogen nonmetal ">
+                            <div class="number">17</div>
+                            <div class="symbol">Cl</div>
+                            <div class="element-name">Chlorine</div>
+                        </div>
+                        <div id="Ar_ele" title="Argon" class="element element-18 noble gas ">
+                            <div class="number">18</div>
+                            <div class="symbol">Ar</div>
+                            <div class="element-name">Argon</div>
+                        </div>
+                        <div id="K_ele" title="Potassium" class="element element-19 alkali metal ">
+                            <div class="number">19</div>
+                            <div class="symbol">K</div>
+                            <div class="element-name">Potassium</div>
+                        </div>
+                        <div id="Ca_ele" title="Calcium" class="element element-20 alkaline earth metal ">
+                            <div class="number">20</div>
+                            <div class="symbol">Ca</div>
+                            <div class="element-name">Calcium</div>
+                        </div>
+                        <div id="Sc_ele" title="Scandium" class="element element-21 transition metal ">
+                            <div class="number">21</div>
+                            <div class="symbol">Sc</div>
+                            <div class="element-name">Scandium</div>
+                        </div>
+                        <div id="Ti_ele" title="Titanium" class="element element-22 transition metal ">
+                            <div class="number">22</div>
+                            <div class="symbol">Ti</div>
+                            <div class="element-name">Titanium</div>
+                        </div>
+                        <div id="V_ele" title="Vanadium" class="element element-23 transition metal ">
+                            <div class="number">23</div>
+                            <div class="symbol">V</div>
+                            <div class="element-name">Vanadium</div>
+                        </div>
+                        <div id="Cr_ele" title="Chromium" class="element element-24 transition metal ">
+                            <div class="number">24</div>
+                            <div class="symbol">Cr</div>
+                            <div class="element-name">Chromium</div>
+                        </div>
+                        <div id="Mn_ele" title="Manganese" class="element element-25 transition metal ">
+                            <div class="number">25</div>
+                            <div class="symbol">Mn</div>
+                            <div class="element-name">Manganese</div>
+                        </div>
+                        <div id="Fe_ele" title="Iron" class="element element-26 transition metal ">
+                            <div class="number">26</div>
+                            <div class="symbol">Fe</div>
+                            <div class="element-name">Iron</div>
+                        </div>
+                        <div id="Co_ele" title="Cobalt" class="element element-27 transition metal ">
+                            <div class="number">27</div>
+                            <div class="symbol">Co</div>
+                            <div class="element-name">Cobalt</div>
+                        </div>
+                        <div id="Ni_ele" title="Nickel" class="element element-28 transition metal ">
+                            <div class="number">28</div>
+                            <div class="symbol">Ni</div>
+                            <div class="element-name">Nickel</div>
+                        </div>
+                        <div id="Cu_ele" title="Copper" class="element element-29 transition metal ">
+                            <div class="number">29</div>
+                            <div class="symbol">Cu</div>
+                            <div class="element-name">Copper</div>
+                        </div>
+                        <div id="Zn_ele" title="Zinc" class="element element-30 transition metal ">
+                            <div class="number">30</div>
+                            <div class="symbol">Zn</div>
+                            <div class="element-name">Zinc</div>
+                        </div>
+                        <div id="Ga_ele" title="Gallium" class="element element-31 post-transition metal ">
+                            <div class="number">31</div>
+                            <div class="symbol">Ga</div>
+                            <div class="element-name">Gallium</div>
+                        </div>
+                        <div id="Ge_ele" title="Germanium" class="element element-32 metalloid ">
+                            <div class="number">32</div>
+                            <div class="symbol">Ge</div>
+                            <div class="element-name">Germanium</div>
+                        </div>
+                        <div id="As_ele" title="Arsenic" class="element element-33 metalloid ">
+                            <div class="number">33</div>
+                            <div class="symbol">As</div>
+                            <div class="element-name">Arsenic</div>
+                        </div>
+                        <div id="Se_ele" title="Selenium" class="element element-34 polyatomic nonmetal ">
+                            <div class="number">34</div>
+                            <div class="symbol">Se</div>
+                            <div class="element-name">Selenium</div>
+                        </div>
+                        <div id="Br_ele" title="Bromine" class="element element-35 halogen nonmetal ">
+                            <div class="number">35</div>
+                            <div class="symbol">Br</div>
+                            <div class="element-name">Bromine</div>
+                        </div>
+                        <div id="Kr_ele" title="Krypton" class="element element-36 noble gas ">
+                            <div class="number">36</div>
+                            <div class="symbol">Kr</div>
+                            <div class="element-name">Krypton</div>
+                        </div>
+                        <div id="Rb_ele" title="Rubidium" class="element element-37 alkali metal ">
+                            <div class="number">37</div>
+                            <div class="symbol">Rb</div>
+                            <div class="element-name">Rubidium</div>
+                        </div>
+                        <div id="Sr_ele" title="Strontium" class="element element-38 alkaline earth metal ">
+                            <div class="number">38</div>
+                            <div class="symbol">Sr</div>
+                            <div class="element-name">Strontium</div>
+                        </div>
+                        <div id="Y_ele" title="Yttrium" class="element element-39 transition metal ">
+                            <div class="number">39</div>
+                            <div class="symbol">Y</div>
+                            <div class="element-name">Yttrium</div>
+                        </div>
+                        <div id="Zr_ele" title="Zirconium" class="element element-40 transition metal ">
+                            <div class="number">40</div>
+                            <div class="symbol">Zr</div>
+                            <div class="element-name">Zirconium</div>
+                        </div>
+                        <div id="Nb_ele" title="Niobium" class="element element-41 transition metal ">
+                            <div class="number">41</div>
+                            <div class="symbol">Nb</div>
+                            <div class="element-name">Niobium</div>
+                        </div>
+                        <div id="Mo_ele" title="Molybdenum" class="element element-42 transition metal ">
+                            <div class="number">42</div>
+                            <div class="symbol">Mo</div>
+                            <div class="element-name">Molybdenum</div>
+                        </div>
+                        <div id="Tc_ele" title="Technetium" class="element element-43 transition metal ">
+                            <div class="number">43</div>
+                            <div class="symbol">Tc</div>
+                            <div class="element-name">Technetium</div>
+                        </div>
+                        <div id="Ru_ele" title="Ruthenium" class="element element-44 transition metal ">
+                            <div class="number">44</div>
+                            <div class="symbol">Ru</div>
+                            <div class="element-name">Ruthenium</div>
+                        </div>
+                        <div id="Rh_ele" title="Rhodium" class="element element-45 transition metal ">
+                            <div class="number">45</div>
+                            <div class="symbol">Rh</div>
+                            <div class="element-name">Rhodium</div>
+                        </div>
+                        <div id="Pd_ele" title="Palladium" class="element element-46 transition metal ">
+                            <div class="number">46</div>
+                            <div class="symbol">Pd</div>
+                            <div class="element-name">Palladium</div>
+                        </div>
+                        <div id="Ag_ele" title="Silver" class="element element-47 transition metal ">
+                            <div class="number">47</div>
+                            <div class="symbol">Ag</div>
+                            <div class="element-name">Silver</div>
+                        </div>
+                        <div id="Cd_ele" title="Cadmium" class="element element-48 transition metal ">
+                            <div class="number">48</div>
+                            <div class="symbol">Cd</div>
+                            <div class="element-name">Cadmium</div>
+                        </div>
+                        <div id="In_ele" title="Indium" class="element element-49 post-transition metal ">
+                            <div class="number">49</div>
+                            <div class="symbol">In</div>
+                            <div class="element-name">Indium</div>
+                        </div>
+                        <div id="Sn_ele" title="Tin" class="element element-50 post-transition metal ">
+                            <div class="number">50</div>
+                            <div class="symbol">Sn</div>
+                            <div class="element-name">Tin</div>
+                        </div>
+                        <div id="Sb_ele" title="Antimony" class="element element-51 metalloid ">
+                            <div class="number">51</div>
+                            <div class="symbol">Sb</div>
+                            <div class="element-name">Antimony</div>
+                        </div>
+                        <div id="Te_ele" title="Tellurium" class="element element-52 metalloid ">
+                            <div class="number">52</div>
+                            <div class="symbol">Te</div>
+                            <div class="element-name">Tellurium</div>
+                        </div>
+                        <div id="I_ele" title="Iodine" class="element element-53 halogen nonmetal ">
+                            <div class="number">53</div>
+                            <div class="symbol">I</div>
+                            <div class="element-name">Iodine</div>
+                        </div>
+                        <div id="Xe_ele" title="Xenon" class="element element-54 noble gas ">
+                            <div class="number">54</div>
+                            <div class="symbol">Xe</div>
+                            <div class="element-name">Xenon</div>
+                        </div>
+                        <div id="Cs_ele" title="Cesium" class="element element-55 alkali metal ">
+                            <div class="number">55</div>
+                            <div class="symbol">Cs</div>
+                            <div class="element-name">Cesium</div>
+                        </div>
+                        <div id="Ba_ele" title="Barium" class="element element-56 alkaline earth metal ">
+                            <div class="number">56</div>
+                            <div class="symbol">Ba</div>
+                            <div class="element-name">Barium</div>
+                        </div>
+                        <div id="Hf_ele" title="Hafnium" class="element element-72 transition metal ">
+                            <div class="number">72</div>
+                            <div class="symbol">Hf</div>
+                            <div class="element-name">Hafnium</div>
+                        </div>
+                        <div id="Ta_ele" title="Tantalum" class="element element-73 transition metal ">
+                            <div class="number">73</div>
+                            <div class="symbol">Ta</div>
+                            <div class="element-name">Tantalum</div>
+                        </div>
+                        <div id="W_ele" title="Tungsten" class="element element-74 transition metal ">
+                            <div class="number">74</div>
+                            <div class="symbol">W</div>
+                            <div class="element-name">Tungsten</div>
+                        </div>
+                        <div id="Re_ele" title="Rhenium" class="element element-75 transition metal ">
+                            <div class="number">75</div>
+                            <div class="symbol">Re</div>
+                            <div class="element-name">Rhenium</div>
+                        </div>
+                        <div id="Os_ele" title="Osmium" class="element element-76 transition metal ">
+                            <div class="number">76</div>
+                            <div class="symbol">Os</div>
+                            <div class="element-name">Osmium</div>
+                        </div>
+                        <div id="Ir_ele" title="Iridium" class="element element-77 transition metal ">
+                            <div class="number">77</div>
+                            <div class="symbol">Ir</div>
+                            <div class="element-name">Iridium</div>
+                        </div>
+                        <div id="Pt_ele" title="Platinum" class="element element-78 transition metal ">
+                            <div class="number">78</div>
+                            <div class="symbol">Pt</div>
+                            <div class="element-name">Platinum</div>
+                        </div>
+                        <div id="Au_ele" title="Gold" class="element element-79 transition metal ">
+                            <div class="number">79</div>
+                            <div class="symbol">Au</div>
+                            <div class="element-name">Gold</div>
+                        </div>
+                        <div id="Hg_ele" title="Mercury" class="element element-80 transition metal ">
+                            <div class="number">80</div>
+                            <div class="symbol">Hg</div>
+                            <div class="element-name">Mercury</div>
+                        </div>
+                        <div id="Tl_ele" title="Thallium" class="element element-81 post-transition metal ">
+                            <div class="number">81</div>
+                            <div class="symbol">Tl</div>
+                            <div class="element-name">Thallium</div>
+                        </div>
+                        <div id="Pb_ele" title="Lead" class="element element-82 post-transition metal ">
+                            <div class="number">82</div>
+                            <div class="symbol">Pb</div>
+                            <div class="element-name">Lead</div>
+                        </div>
+                        <div id="Bi_ele" title="Bismuth" class="element element-83 post-transition metal ">
+                            <div class="number">83</div>
+                            <div class="symbol">Bi</div>
+                            <div class="element-name">Bismuth</div>
+                        </div>
+                        <div id="Po_ele" title="Polonium" class="element element-84 metalloid ">
+                            <div class="number">84</div>
+                            <div class="symbol">Po</div>
+                            <div class="element-name">Polonium</div>
+                        </div>
+                        <div id="At_ele" title="Astatine" class="element element-85 halogen nonmetal ">
+                            <div class="number">85</div>
+                            <div class="symbol">At</div>
+                            <div class="element-name">Astatine</div>
+                        </div>
+                        <div id="Rn_ele" title="Radon" class="element element-86 noble gas ">
+                            <div class="number">86</div>
+                            <div class="symbol">Rn</div>
+                            <div class="element-name">Radon</div>
+                        </div>
+                        <div id="Fr_ele" title="Francium" class="element element-87 alkali metal ">
+                            <div class="number">87</div>
+                            <div class="symbol">Fr</div>
+                            <div class="element-name">Francium</div>
+                        </div>
+                        <div id="Ra_ele" title="Radium" class="element element-88 alkaline earth metal ">
+                            <div class="number">88</div>
+                            <div class="symbol">Ra</div>
+                            <div class="element-name">Radium</div>
+                        </div>
+
+                        <div id="Rf_ele" title="Rutherfordium" class="element element-104 transition metal ">
+                            <div class="number">104</div>
+                            <div class="symbol">Rf</div>
+                            <div class="element-name">Rutherfordium</div>
+                        </div>
+                        <div id="Db_ele" title="Dubnium" class="element element-105 transition metal ">
+                            <div class="number">105</div>
+                            <div class="symbol">Db</div>
+                            <div class="element-name">Dubnium</div>
+                        </div>
+                        <div id="Sg_ele" title="Seaborgium" class="element element-106 transition metal ">
+                            <div class="number">106</div>
+                            <div class="symbol">Sg</div>
+                            <div class="element-name">Seaborgium</div>
+                        </div>
+                        <div id="Bh_ele" title="Bohrium" class="element element-107 transition metal ">
+                            <div class="number">107</div>
+                            <div class="symbol">Bh</div>
+                            <div class="element-name">Bohrium</div>
+                        </div>
+                        <div id="Hs_ele" title="Hassium" class="element element-108 transition metal ">
+                            <div class="number">108</div>
+                            <div class="symbol">Hs</div>
+                            <div class="element-name">Hassium</div>
+                        </div>
+                        <div id="Mt_ele" title="Meitnerium" class="element element-109 transition metal ">
+                            <div class="number">109</div>
+                            <div class="symbol">Mt</div>
+                            <div class="element-name">Meitnerium</div>
+                        </div>
+                        <div id="Ds_ele" title="Darmstadtium" class="element element-110 transition metal ">
+                            <div class="number">110</div>
+                            <div class="symbol">Ds</div>
+                            <div class="element-name">Darmstadtium</div>
+                        </div>
+                        <div id="Rg_ele" title="Roentgenium" class="element element-111 transition metal ">
+                            <div class="number">111</div>
+                            <div class="symbol">Rg</div>
+                            <div class="element-name">Roentgenium</div>
+                        </div>
+                        <div id="Cn_ele" title="Copernicium" class="element element-112 transition metal ">
+                            <div class="number">112</div>
+                            <div class="symbol">Cn</div>
+                            <div class="element-name">Copernicium</div>
+                        </div>
+                        <div id="Nh_ele" title="Nihonium" class="element element-113 post-transition metal ">
+                            <div class="number">113</div>
+                            <div class="symbol">Nh</div>
+                            <div class="element-name">Nihonium</div>
+                        </div>
+                        <div id="Fl_ele" title="Flerovium" class="element element-114 post-transition metal ">
+                            <div class="number">114</div>
+                            <div class="symbol">Fl</div>
+                            <div class="element-name">Flerovium</div>
+                        </div>
+                        <div id="Mc_ele" title="Moscovium" class="element element-115 post-transition metal ">
+                            <div class="number">115</div>
+                            <div class="symbol">Mc</div>
+                            <div class="element-name">Moscovium</div>
+                        </div>
+                        <div id="Lv_ele" title="Livermorium" class="element element-116 post-transition metal ">
+                            <div class="number">116</div>
+                            <div class="symbol">Lv</div>
+                            <div class="element-name">Livermorium</div>
+                        </div>
+                        <div id="Ts_ele" title="Tennessine" class="element element-117 halogen nonmetal ">
+                            <div class="number">117</div>
+                            <div class="symbol">Ts</div>
+                            <div class="element-name">Tennessine</div>
+                        </div>
+                        <div id="Og_ele" title="Oganesson" class="element element-118 noble ">
+                            <div class="number">118</div>
+                            <div class="symbol">Og</div>
+                            <div class="element-name">Oganesson</div>
+                        </div>
+                        <div id="La_ele" title="Lanthanum" class="element element-57 lanthanide ">
+                            <div class="number">57</div>
+                            <div class="symbol">La</div>
+                            <div class="element-name">Lanthanum</div>
+                        </div>
+                        <div id="Ce_ele" title="Cerium" class="element element-58 lanthanide ">
+                            <div class="number">58</div>
+                            <div class="symbol">Ce</div>
+                            <div class="element-name">Cerium</div>
+                        </div>
+                        <div id="Pr_ele" title="Praseodymium" class="element element-59 lanthanide ">
+                            <div class="number">59</div>
+                            <div class="symbol">Pr</div>
+                            <div class="element-name">Praseodymium</div>
+                        </div>
+                        <div id="Nd_ele" title="Neodymium" class="element element-60 lanthanide ">
+                            <div class="number">60</div>
+                            <div class="symbol">Nd</div>
+                            <div class="element-name">Neodymium</div>
+                        </div>
+                        <div id="Pm_ele" title="Promethium" class="element element-61 lanthanide ">
+                            <div class="number">61</div>
+                            <div class="symbol">Pm</div>
+                            <div class="element-name">Promethium</div>
+                        </div>
+                        <div id="Sm_ele" title="Samarium" class="element element-62 lanthanide ">
+                            <div class="number">62</div>
+                            <div class="symbol">Sm</div>
+                            <div class="element-name">Samarium</div>
+                        </div>
+                        <div id="Eu_ele" title="Europium" class="element element-63 lanthanide ">
+                            <div class="number">63</div>
+                            <div class="symbol">Eu</div>
+                            <div class="element-name">Europium</div>
+                        </div>
+                        <div id="Gd_ele" title="Gadolinium" class="element element-64 lanthanide ">
+                            <div class="number">64</div>
+                            <div class="symbol">Gd</div>
+                            <div class="element-name">Gadolinium</div>
+                        </div>
+                        <div id="Tb_ele" title="Terbium" class="element element-65 lanthanide ">
+                            <div class="number">65</div>
+                            <div class="symbol">Tb</div>
+                            <div class="element-name">Terbium</div>
+                        </div>
+                        <div id="Dy_ele" title="Dysprosium" class="element element-66 lanthanide ">
+                            <div class="number">66</div>
+                            <div class="symbol">Dy</div>
+                            <div class="element-name">Dysprosium</div>
+                        </div>
+                        <div id="Ho_ele" title="Holmium" class="element element-67 lanthanide ">
+                            <div class="number">67</div>
+                            <div class="symbol">Ho</div>
+                            <div class="element-name">Holmium</div>
+                        </div>
+                        <div id="Er_ele" title="Erbium" class="element element-68 lanthanide ">
+                            <div class="number">68</div>
+                            <div class="symbol">Er</div>
+                            <div class="element-name">Erbium</div>
+                        </div>
+                        <div id="Tm_ele" title="Thulium" class="element element-69 lanthanide ">
+                            <div class="number">69</div>
+                            <div class="symbol">Tm</div>
+                            <div class="element-name">Thulium</div>
+                        </div>
+                        <div id="Yb_ele" title="Ytterbium" class="element element-70 lanthanide ">
+                            <div class="number">70</div>
+                            <div class="symbol">Yb</div>
+                            <div class="element-name">Ytterbium</div>
+                        </div>
+                        <div id="Lu_ele" title="Lutetium" class="element element-71 lanthanide ">
+                            <div class="number">71</div>
+                            <div class="symbol">Lu</div>
+                            <div class="element-name">Lutetium</div>
+                        </div>
+                        <div id="Ac_ele" title="Actinium" class="element element-89 actinide ">
+                            <div class="number">89</div>
+                            <div class="symbol">Ac</div>
+                            <div class="element-name">Actinium</div>
+                        </div>
+                        <div id="Th_ele" title="Thorium" class="element element-90 actinide ">
+                            <div class="number">90</div>
+                            <div class="symbol">Th</div>
+                            <div class="element-name">Thorium</div>
+                        </div>
+                        <div id="Pa_ele" title="Protactinium" class="element element-91 actinide ">
+                            <div class="number">91</div>
+                            <div class="symbol">Pa</div>
+                            <div class="element-name">Protactinium</div>
+                        </div>
+                        <div id="U_ele" title="Uranium" class="element element-92 actinide ">
+                            <div class="number">92</div>
+                            <div class="symbol">U</div>
+                            <div class="element-name">Uranium</div>
+                        </div>
+                        <div id="Np_ele" title="Neptunium" class="element element-93 actinide ">
+                            <div class="number">93</div>
+                            <div class="symbol">Np</div>
+                            <div class="element-name">Neptunium</div>
+                        </div>
+                        <div id="Pu_ele" title="Plutonium" class="element element-94 actinide ">
+                            <div class="number">94</div>
+                            <div class="symbol">Pu</div>
+                            <div class="element-name">Plutonium</div>
+                        </div>
+                        <div id="Am_ele" title="Americium" class="element element-95 actinide ">
+                            <div class="number">95</div>
+                            <div class="symbol">Am</div>
+                            <div class="element-name">Americium</div>
+                        </div>
+                        <div id="Cm_ele" title="Curium" class="element element-96 actinide ">
+                            <div class="number">96</div>
+                            <div class="symbol">Cm</div>
+                            <div class="element-name">Curium</div>
+                        </div>
+                        <div id="Bk_ele" title="Berkelium" class="element element-97 actinide ">
+                            <div class="number">97</div>
+                            <div class="symbol">Bk</div>
+                            <div class="element-name">Berkelium</div>
+                        </div>
+                        <div id="Cf_ele" title="Californium" class="element element-98 actinide ">
+                            <div class="number">98</div>
+                            <div class="symbol">Cf</div>
+                            <div class="element-name">Californium</div>
+                        </div>
+                        <div id="Es_ele" title="Einsteinium" class="element element-99 actinide ">
+                            <div class="number">99</div>
+                            <div class="symbol">Es</div>
+                            <div class="element-name">Einsteinium</div>
+                        </div>
+                        <div id="Fm_ele" title="Fermium" class="element element-100 actinide ">
+                            <div class="number">100</div>
+                            <div class="symbol">Fm</div>
+                            <div class="element-name">Fermium</div>
+                        </div>
+                        <div id="Md_ele" title="Mendelevium" class="element element-101 actinide ">
+                            <div class="number">101</div>
+                            <div class="symbol">Md</div>
+                            <div class="element-name">Mendelevium</div>
+                        </div>
+                        <div id="No_ele" title="Nobelium" class="element element-102 actinide ">
+                            <div class="number">102</div>
+                            <div class="symbol">No</div>
+                            <div class="element-name">Nobelium</div>
+                        </div>
+                        <div id="Lr_ele" title="Lawrencium" class="element element-103 actinide ">
+                            <div class="number">103</div>
+                            <div class="symbol">Lr</div>
+                            <div class="element-name">Lawrencium</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            <div class="col col-md-2"></div>
+        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id = "tab-container-parent" class="tab-container-parent">
+                        <div class="col-lg-2 sel-ele-txt">Selected Elements: </div>
+                        <div id="tabs" class="tab-container tab-box col-lg-6"></div>
+                        <div class="col-lg-4"> Year
+                            <select id='anaYear' class="form-select form-select-lg mb-4" onchange="yearChange()">
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023" selected>2023</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div id="resOrProd" class="tab-container resOrProdBtns col-lg-12">
+                        <span id="mapProd" class="tabBtn active" onclick="switchResProd(this);">Production</span>
+                        <span id="mapRes" class="tabBtn" onclick="switchResProd(this);">Reserve</span>
+                    </div>
+                    <div id="tabContents" class="tab-contents"></div>
+                    
+                    <div style="align-content: center;text-align: center; width:100%">
+                    <div id="worldmap" class="worldmap">
+                        <div id="info-table"></div>
+                    </div>
+                </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-inline-flex col-sm-6" style="padding:20">
+                    <div id="hhiProd" style="width:90%;" class="card"> </div>
+                </div>
+                
+                <div class="d-inline-flex col-sm-6" style="padding:20">
+                    <div id="hhiRes" style="width:90%;" class="card"> </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div id='mktShareAll' class="col-sm-8" style="padding:20"></div>
+                <div class="col-sm-2"></div>
+            </div>
+            <!-- <div class="row download">
+                <button type="button" class="btn btn-success" onclick="download(event, 'prod');">Download Production</button>
+                <button type="button" class="btn btn-success" onclick="download(event, 'res');">Download Reserve</button>
+            </div> -->
+            <button id="feedback-button">Feedback</button>
+    </section>
+    
+    <!-- Chat-->
+    <button id="mat-assist-btn" role="button"><img id="mat-assist-fig" src="static/img/matassist_icon.png"><p>MatAssist</p></button>
+
+    <div id="info-window" class="info-window"></div>
+
+<div id="chat-container" class="raised-element">
+    <div class="message-header">
+        <span class="mat-assist-header"><img src="static/img/matassist_icon.png" height="28px"></span>
+        <span>
+            <span class="chat-refresh-btn" id="chatRefreshBtn" title="Clear history"><span class="glyphicon glyphicon-refresh"></span></span>
+            <span class="chat-hide-btn" id="chatHideBtn" title="Hide chat window">&#x2b07;</span>
+        </span>
+    </div>
+    <div id="messages-container">
+        <div id="messages">
+        
+        <!-- Chat messages will be loaded dynamically -->
+        </div>
+    </div>
+    
+    <div id="message-form-container">
+        <form id="message-form">
+            <textarea id="message-input" placeholder="Type your message..."></textarea>
+            <button id="message-input-btn" class="btn btn-dark" type="submit">&#x2b06;</button>
+        </form> 
+    </div>
+    <div class="assist-warn">
+       <p> MatAssist can make mistakes. Check important info.</p>
+    </div>
+</div>
+
+    <footer>
+        <p>Contact Us: Trupti Mohanty<br>
+        <a href="mailto:trupti.mohanty@utah.edu">trupti.mohanty@utah.edu</a></p>
+
+        <p>Session ID: <span id="session_id">{{ session_id }}</span></p>
+        <p> Data source : <a href="https://www.usgs.gov/centers/national-minerals-information-center/minerals-yearbook-metals-and-minerals" target="_blank">United States Geological Survey (USGS) Minerals Yearbook and Mineral Commodity Summaries</a></p>
+    </footer>
+
+    
+</body>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+<script type="text/javascript" src="static/main.js"></script>
+<script type="text/javascript" src="static/chat.js"></script>
+
+
+
+</html>

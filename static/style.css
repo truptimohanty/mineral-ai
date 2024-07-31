@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#chat-box {
+    width: 400px;
+    height: 300px; /* Set a fixed height to the chat box */
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden; /* Hide overflow content */
+}
+
+#messages {
+    height: calc(100% - 40px); /* Set height to fill the chat box, considering padding */
+    overflow-y: scroll; /* Add vertical scroll */
+    padding: 10px;
+}
+
+.message {
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word; /* Wrap long words */
+}
+
+.user-message {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+}
+
+.response-message {
+    background-color: #f0f0f0;
+    color: #000;
+    text-align: left;
+    word-wrap: break-word; /* Add word wrap to response messages */
+}
+
+.blinker {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.message p {
+    margin: 0;
+}
+
+#message-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#message-input {
+    flex: 1; /* Take up remaining space */
+    margin-right: 10px; /* Add some spacing between textarea and button */
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

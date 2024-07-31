@@ -1,0 +1,12 @@
+Flask==3.0.3
+huggingface-hub==0.21.4
+langchain==0.1.13
+langchain-community==0.0.32
+langchain-core==0.1.42
+langchain-text-splitters==0.0.1
+langsmith==0.1.31
+sentence-transformers==2.5.1
+transformers==4.39.0
+chromadb
+rouge-score==0.1.2
+bert-score==0.3.13
