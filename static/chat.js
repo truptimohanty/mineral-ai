@@ -61,11 +61,49 @@ $(document).ready(function () {
                 //fetchMessages();
                 // Remove blinker class after receiving response
                 $(".blinker").remove();
-
-                if (data.length > 0) {
-                    var parsedMessage = marked.parse(data);
+                console.log(data);
+                if (data['llm_response'].length > 0) {
+                    var parsedMessage = marked.parse(data['llm_response']);
                     $("#messages").append("<div class='response-message'>" + parsedMessage + "</div>");
                 }
+
+                if (data['docs_used'].length > 0) {
+                    // Show-hide list of documents
+                    var toggleIcon = $("<span>").addClass('toggle-icon').text("🔗").css('cursor', 'pointer');
+                    var linkList = $("<div>").addClass('link-list').css('display', 'none');
+                    var ul = $("<ul>");
+                    
+                    // Add the text before the list
+                    var introText = $("<p>").text("To answer this, RawMatAssist looked for the following documents:");
+                    linkList.append(introText);
+
+                    // Generate links for the documents
+                    data['docs_used'].forEach(function(doc) {
+                        var li = $("<li>");
+                        var anchor = $("<a>").attr('href', '/pdf/'+doc).attr('target', '_blank').text(doc);
+                        li.append(anchor);
+                        ul.append(li);
+                    });
+                    
+                    linkList.append(ul);
+                    var responseMessageDiv = $("<div>").addClass('response-message-docs');
+                    responseMessageDiv.append(toggleIcon).append(linkList);
+                    
+                    // Append the response message with the toggle functionality
+                    $("#messages").append(responseMessageDiv);
+    
+                    // Toggle functionality
+                    toggleIcon.click(function() {
+                        if (linkList.css('display') === 'none') {
+                            linkList.css('display', 'block');  // Show the list
+                            toggleIcon.text("🔗 Hide Documents");  // Change text
+                        } else {
+                            linkList.css('display', 'none');  // Hide the list
+                            toggleIcon.text("🔗");  // Change text
+                        }
+                    });
+                }
+
             }).fail(function() {
                 $(".blinker").remove();
                 $("#messages").append("<div class='response-message-error'> Encounter error. Please considering refresh the page or refresh the chat.</div>");

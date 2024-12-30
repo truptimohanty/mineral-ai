@@ -40,6 +40,13 @@ body {
     word-wrap: break-word; /* Add word wrap to response messages */
 }
 
+.response-message-docs {
+    background-color: #ccc;
+    color: #000;
+    text-align: left;
+    word-wrap: break-word; /* Add word wrap to response messages */
+}
+
 .blinker {
     animation: blinker 1s linear infinite;
 }

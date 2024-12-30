@@ -124,6 +124,29 @@ var getMarketShareResData = function (element, year) {
 }
 
 
+var getTotalMarketShares = function(element, year){
+
+    var elementData = dataProd.filter(function (r) {
+        return r.element.trim() === element && r.year.trim() === year.toString();
+    });
+
+    var elementDataRes = dataReserve.filter(function (r) {
+        if(PLATINUM_GROUP_METALS.includes(element)){
+            return r.element.trim() == "PGM" && r.year.trim() === year.toString();
+        }else{
+            return r.element.trim() === element && r.year.trim() === year.toString();
+        }
+
+    });
+    let total_production = elementData.map(a => parseFloat(a.total_production));
+    let total_reserve = elementDataRes.map(a => parseFloat(a.total_reserve));
+
+    return([total_production[0], total_reserve[0]])
+} 
+
+
+
+
 var getMarketShareDataViz = function (element, year) {
     if (element) {
         var _mktSharedata = getMarketShareData(element, year);
@@ -663,6 +686,24 @@ var updateVizs = function () {
                 displaylogo: false,
                 toImageButtonOptions: { filename: 'Market Share of ' + symblNameMap[key] }
             });
+
+
+        //  to show the totals
+            var plotContainerDiv = shareElement.querySelector('.svg-container');
+            var totalDiv = document.createElement('div');
+            var totals = getTotalMarketShares(key, global_analysis_year)
+            totalDiv.classList.add('totals');
+            var totals_txt = '';
+            if (totals[0] !== undefined & totals[0] !== NaN) totals_txt = totals_txt + 'Total production: '+ totals[0].toLocaleString() + ' Tons';
+            if (totals[0] !== undefined & totals[0] !== NaN & totals[1] !== undefined & totals[1] !== NaN) totals_txt = totals_txt + '|';
+            if (totals[1] !== undefined & totals[1] !== NaN) totals_txt = totals_txt + 'Total reserve: '+ totals[1].toLocaleString() + ' Tons';
+            totalDiv.textContent = totals_txt;
+            totalDiv.style.position = 'absolute';
+            totalDiv.style.bottom = '1px';
+            totalDiv.style.right = '5px';
+            totalDiv.style.fontsize = 'small';
+            plotContainerDiv.appendChild(totalDiv);
+
     }
 }
 
@@ -689,66 +730,85 @@ function objectToCsv(alldata) {
 
 function download(e, ftype) {
 
-    // if (Object.keys(hhiProductionMulti).length > 0) {
-    //     var dataDownload = [];
-    //     for (let key in hhiProductionMulti) {
-    //         var elementData = dataProd.filter(function (r) {
-    //             return r.element === key;
-    //         });
-    //         dataDownload.push(elementData);
-    //     }
-
-    //     // Convert object data to CSV format
-    //     const csvContent = objectToCsv(dataDownload);
-
-    //     let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContent;
-    //     var encodedUri = encodeURI(dataDownloadStr);
-    //     window.open(encodedUri);
-    // } else {
-    //     const csvContent = objectToCsv([dataProd]);
-
-    //     let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContent;
-    //     var encodedUri = encodeURI(dataDownloadStr);
-    //     window.open(encodedUri);
-    // }
-
-    // if (Object.keys(hhiReserveMulti).length > 0) {
-    //     var dataDownload = [];
-    //     for (let key in hhiReserveMulti) {
-    //         var elementData = dataReserve.filter(function (r) {
-    //             return r.element === key;
-    //         });
-    //         dataDownload.push(elementData);
-    //     }
-
-    //     // Convert object data to CSV format
-    //     const csvContent = objectToCsv(dataDownload);
-
-    //     let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContent;
-    //     var encodedUri = encodeURI(dataDownloadStr);
-    //     window.open(encodedUri);
-    // } else {
-    //     const csvContent = objectToCsv([dataReserve]);
-
-    //     let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContent;
-    //     var encodedUri = encodeURI(dataDownloadStr);
-    //     window.open(encodedUri);
-    // }
-
     e.preventDefault();
-    if(ftype == 'prod'){
-        const csvContent = objectToCsv([dataProd]);
-        let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContent;
-        var encodedUri = encodeURI(dataDownloadStr);
-        window.open(encodedUri);
+    if (ftype == 'prod') {
+        let dataDownload = [];
+
+        // Prepare data for download
+        if (Object.keys(hhiProductionMulti).length > 0) {
+            for (let key in hhiProductionMulti) {
+                var elementData = dataProd.filter(function (r) {
+                    return r.element === key;
+                });
+                dataDownload.push(elementData);
+            }
+        } else {
+            dataDownload = [dataProd];
+        }
+
+        // Convert object data to CSV format
+        const csvContent = objectToCsv(dataDownload);
+
+        let dataDownloadStr = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);  // Ensure CSV content is properly encoded
+        var encodedUri = dataDownloadStr;
+
+        // Create an <a> tag to trigger the download
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "production.csv");  // Set the filename explicitly
+
+        // Append the link to the document, trigger a click, and remove the link afterwards
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
-    if(ftype == 'res'){
-        const csvContentRes = objectToCsv([dataReserve]);
-        let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContentRes;
-        var encodedUri = encodeURI(dataDownloadStr);
-        window.open(encodedUri);
+    if (ftype == 'res') {
+        let dataDownload = [];
+
+        // Prepare data for download
+        if (Object.keys(hhiReserveMulti).length > 0) {
+            for (let key in hhiReserveMulti) {
+                var elementData = dataReserve.filter(function (r) {
+                    return r.element === key;
+                });
+                dataDownload.push(elementData);
+            }
+        } else {
+            dataDownload = [dataProd];
+        }
+
+        // Convert object data to CSV format
+        const csvContent = objectToCsv(dataDownload);
+
+        let dataDownloadStr = "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent);  // Ensure CSV content is properly encoded
+        var encodedUri = dataDownloadStr;
+
+        // Create an <a> tag to trigger the download
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "reserve.csv");  // Set the filename explicitly
+
+        // Append the link to the document, trigger a click, and remove the link afterwards
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
+
+    // e.preventDefault();
+    // if(ftype == 'prod'){
+    //     const csvContent = objectToCsv([dataProd]);
+    //     let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContent;
+    //     var encodedUri = encodeURI(dataDownloadStr);
+    //     window.open(encodedUri);
+    // }
+
+    // if(ftype == 'res'){
+    //     const csvContentRes = objectToCsv([dataReserve]);
+    //     let dataDownloadStr = "data:text/csv;charset=utf-8," + csvContentRes;
+    //     var encodedUri = encodeURI(dataDownloadStr);
+    //     window.open(encodedUri);
+    // }
 }
 
 // Sample data for demonstration

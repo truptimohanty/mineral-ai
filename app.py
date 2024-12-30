@@ -12,7 +12,7 @@ app.secret_key = os.urandom(24)
 
 llm = LLMResponse()
 
-INTRODUCTION_MSG = "Hi! I am MatAssist. I can provide information about mineral commodities such as material production, reserve, country-wise market share, imports, exports, recycling resources, price and substitutes.How can I assist you today?"
+INTRODUCTION_MSG = "Hi! I am RawMatAssist. I can provide information about mineral commodities such as material production, reserve, country-wise market share, imports, exports, recycling resources, price and substitutes.How can I assist you today?"
 
 @app.before_request
 def before_request():
@@ -45,6 +45,14 @@ def download_HHI_reserve_long():
 def download_HHI_periodic_table():
     return send_from_directory('static/data/','periodic_table.csv')
 
+@app.route('/pdf/<filename>')
+def serve_pdf(filename):
+    if filename and filename.split(".")[-1] == 'pdf':
+        return send_from_directory('static/data/data_mcs_10yrs', filename)
+    elif filename and filename.split(".")[-1] == 'csv':
+        return send_from_directory('static/data', filename)
+    else:
+        return None
     
 @app.route('/send_message', methods=['GET'])
 def send_message():
@@ -61,12 +69,18 @@ def send_message():
     if session_id in session['chat_history']:
         user_chat_memory = session['chat_history'][session_id]
     
-    llm_response, user_chat_memory = llm.get_llm_response(message, maintained_memory = user_chat_memory)
+    llm_response, user_chat_memory, docs_used = llm.get_llm_response(message, maintained_memory = user_chat_memory)
     session['chat_history'][session_id] = user_chat_memory
     session.modified = True
     
+    # print("llm_response---------->")
+    # print(llm_response)
     
-    return jsonify(llm_response)
+    # print("docs_used---------->")
+    # print(docs_used)
+    
+    response = {'llm_response':llm_response, 'docs_used':docs_used}
+    return jsonify(response)
 
 @app.route('/get_messages', methods=['GET'])
 def get_messages():

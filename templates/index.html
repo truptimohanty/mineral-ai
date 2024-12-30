@@ -713,15 +713,15 @@
                 <div id='mktShareAll' class="col-sm-8" style="padding:20"></div>
                 <div class="col-sm-2"></div>
             </div>
-            <!-- <div class="row download">
-                <button type="button" class="btn btn-success" onclick="download(event, 'prod');">Download Production</button>
-                <button type="button" class="btn btn-success" onclick="download(event, 'res');">Download Reserve</button>
-            </div> -->
+            <div class="row download">
+                <button download='production' type="button" class="btn" onclick="download(event, 'prod');" style="background-color: #2b7fb8; color: white; border-color:rgb(3, 42, 68)">Download Production</button>
+                <button download='reserve' type="button" class="btn btn-success" onclick="download(event, 'res');" style="background-color: #7fcdbb; color: white; border-color:rgb(27, 140, 114)">Download Reserve</button>
+            </div>
             <button id="feedback-button">Feedback</button>
     </section>
     
     <!-- Chat-->
-    <button id="mat-assist-btn" role="button"><img id="mat-assist-fig" src="static/img/matassist_icon.png"><p>MatAssist</p></button>
+    <button id="mat-assist-btn" role="button"><img id="mat-assist-fig" src="static/img/matassist_icon.png"><p>RawMatAssist</p></button>
 
     <div id="info-window" class="info-window"></div>
 
@@ -747,7 +747,7 @@
         </form> 
     </div>
     <div class="assist-warn">
-       <p> MatAssist can make mistakes. Check important info.</p>
+       <p> RawMatAssist can make mistakes. Check important info.</p>
     </div>
 </div>
 

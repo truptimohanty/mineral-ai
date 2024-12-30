@@ -1,5 +1,8 @@
 import os
+import itertools
 from pprint import pprint
+from datetime import datetime
+
 from langchain.memory import ConversationBufferMemory
 
 # from langchain.document_loaders import PyPDFLoader
@@ -15,6 +18,7 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.chains import LLMChain
 from langchain.retrievers import MergerRetriever
 
+
 DATA_FILES_PATH = "docs/"
 MODEL_EMBEDDING_NAME = "WhereIsAI/UAE-Large-V1"
 
@@ -25,7 +29,7 @@ MODEL_LLM_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
 
 NO_RESPONSE_MSG = "I apologize; I don't have a response to your query. Please rephrase your question to provide more details."
 
-from datetime import datetime
+
 
 class LLMResponse():
     def __init__(self) -> None:
@@ -40,8 +44,8 @@ class LLMResponse():
         self.hf_llm =HuggingFaceHub(
                             repo_id = MODEL_LLM_NAME,
 
-                            huggingfacehub_api_token="XXXXXXXXXXXXXXXX", ## use your hugging face hub access token
-                            model_kwargs={"temperature":0.1, "max_new_tokens":2000}
+                            huggingfacehub_api_token="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", ## use your hugging face hub access token
+                            model_kwargs={"temperature":0.1,"max_new_tokens":2000, "return_full_text":False}
                             )
 
     def get_vectordb(self, vectordb_path:str, 
@@ -73,8 +77,6 @@ class LLMResponse():
             for i in range(len(maintained_memory['inputs'])):
                 local_memory.append(f'<|start_header_id|>user<|end_header_id|> { maintained_memory["inputs"][i]["question"] }<|eot_id|>')
                 local_memory.append(f'<|start_header_id|>assistant<|end_header_id|> { maintained_memory["outputs"][i]["result"] }<|eot_id|>')
-                # local_memory.append(maintained_memory['inputs'][i]["question"])
-                # local_memory.append(maintained_memory['outputs'][i]["result"])
                 user_system_conversation.append(f'user : {maintained_memory["inputs"][i]["question"]} \n')
                 user_system_conversation.append(f'system : {maintained_memory["outputs"][i]["result"]} \n')
         else:
@@ -84,7 +86,6 @@ class LLMResponse():
         local_memory = " ".join(local_memory)
         user_system_conversation = "".join(user_system_conversation)
         
-
         q_format_template = "<|begin_of_text|> conversation history <history_begin>: "+user_system_conversation + """<history_end> \n
             You are expert in asking question. Please reformat the user question as a stand alone question relevant to mineral commodities and contained as possible with the required information inferred from conversation history if needed. 
             If the question contains sufficient information about material, year then do not change the question.
@@ -105,8 +106,6 @@ class LLMResponse():
         q_qa_chain = LLMChain(llm = self.hf_llm, prompt = q_QA_CHAIN_PROMPT)
         q_res = q_qa_chain.run(question)
         
-        
-    
         q_res = q_res.split("<|eot_id|><|start_header_id|>assistant<|end_header_id|>")
         if len(q_res) > 0:
             q_res = q_res[-1]
@@ -123,22 +122,24 @@ class LLMResponse():
         
         question = q_res
         
-        template = "<|begin_of_text|> Your name is MatAssist. You are an expert in mineral commodities and a helpful, smart, intelligent, sensible and user friendly assistant.\
+        template = "<|begin_of_text|> Your name is RawMatAssist. You are an expert in mineral commodities and a helpful, smart, intelligent, sensible and user friendly assistant.\
             Please do not repeat your name and introduction if already present in the conversation history.\
             You are knowledgeable about mineral commodities such as material production, reserve, country-wise market share, imports, exports, recycling resources, price , substitutes, events, trends and issues.\
             If the user's question is of greetings, acknowledgments type or generic queries, then you can ignore the context and respond back with your intelligence and user friendliness.\
             Answer the query without unnecessary verbose by using the reports in the context and chat history. Please note that hhi represents Herfindahl-Hirschman Index. If you are not confident, respond to the user gracefully and request that more details be provided.\
             If you find the context is not appropriate, then request the user to refine the query further with a specific country, material, and year.\
             If any year is not mentioned, then assume it is for the current year 2023.\
-            If user asks about HHI, market share then give prority to the information in the JSON to answer.\
-            If you are referring to information from the conversation history, then mention that you inferred from a previous conversation with the user and that you quickly forget things because of limited memorization capability.\
-            If you don't find an appropriate answer, you must inform the user gracefully and ask the user to refine the question with further details." + local_memory + """<|start_header_id|>user<|end_header_id|>           
+            If user asks about HHI, market share then give priority to the information in the JSON to answer.\
+            Refer information from the conversation history only if the history is relevant to the question you're answering. If you are referring to information from the conversation history, DO NOT mention that you inferred from a previous conversation with the user.\
+            If you think the question is relevant to the retrieved context, mention the sources at the end of the conversation in the form 'For further information, look into: ...'. If not, don't mention the sources.\
+            If you don't think the context is relevant to the question, you must inform the user gracefully and ask the user to refine the question with further details." + local_memory + """<|start_header_id|>user<|end_header_id|>           
             Question: "{question}" \n
-            Context: "{context} "
+            Context: "{context} "\n
+            
             <|eot_id|><|start_header_id|>assistant<|end_header_id|>
             """
             
-
+# that you quickly forget things because of limited memorization capability.
 
         QA_CHAIN_PROMPT = PromptTemplate(input_variables=["question", "context"],template=template)
         # Run chain
@@ -146,18 +147,25 @@ class LLMResponse():
         
         qa_chain = RetrievalQA.from_chain_type(self.hf_llm,
                                             retriever=self.lotr,
-                                            return_source_documents = False,
+                                            return_source_documents = True,
                                             chain_type_kwargs={"prompt":QA_CHAIN_PROMPT})
         
         
         result = qa_chain({"query": question})
+
+        return_docs = [source_docs.metadata['source'] for source_docs in result["source_documents"]]
+        return_docs = set(return_docs)
+        
+        docs_used = []
+        if return_docs and len(list(return_docs)) > 0:
+            docs_used = [doc.split("/")[-1].replace('json', 'csv') for doc in list(return_docs)]
         
         res = result["result"]
         
-        print("**"*50)
-        print(result)
+        # print("**"*50)
+        # print(result)
 
-        if not return_source_documents:
+        if return_source_documents:
             res = res.split("<|eot_id|><|start_header_id|>assistant<|end_header_id|>")
             if len(res) > 0:
                 res = res[-1]
@@ -168,15 +176,13 @@ class LLMResponse():
             else:
                 res = NO_RESPONSE_MSG
         
-        # maintained_memory['inputs'].append({"question":f'<|begin_of_text|><|start_header_id|>user<|end_header_id|>{ question }<|eot_id|>'})
-        # maintained_memory['outputs'].append({"result":f'<|start_header_id|>assistant<|end_header_id|>{ res }<|eot_id|>'})
-        
         maintained_memory['inputs'].append({"question": question })
         maintained_memory['outputs'].append({"result": res })
         
-        
+        if res == NO_RESPONSE_MSG:
+            docs_used = []
         if len(maintained_memory['inputs']) > history_len:
             maintained_memory['inputs'] = maintained_memory['inputs'][-history_len::]
             maintained_memory['outputs'] = maintained_memory['outputs'][-history_len::]
-        return res, maintained_memory
+        return res, maintained_memory, docs_used
     
