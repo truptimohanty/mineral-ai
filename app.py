@@ -54,6 +54,11 @@ def serve_pdf(filename):
     else:
         return None
     
+@app.route('/Example_Queries.pdf')
+def serve_questions_pdf():
+    return send_from_directory('static/data', 'Example_Queries.pdf')
+    
+    
 @app.route('/send_message', methods=['GET'])
 def send_message():
     session_id = request.args.get('session_id')

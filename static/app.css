@@ -1319,9 +1319,15 @@ https://levelup.gitconnected.com/how-i-made-the-periodic-table-with-css-grid-and
     display: flex;
     flex-shrink: 0;
     font-style: italic;
-    text-align: center;
+    font-size:smaller;
+    /* text-align: center; */
     /* position:absolute; */
     /* bottom: 0; */
+}
+
+.sample-questions{
+    font-style:normal;
+    font-size:small;
 }
 
 #mat-assist-btn {

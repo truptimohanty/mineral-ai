@@ -44,7 +44,7 @@ class LLMResponse():
         self.hf_llm =HuggingFaceHub(
                             repo_id = MODEL_LLM_NAME,
 
-                            huggingfacehub_api_token="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", ## use your hugging face hub access token
+                            huggingfacehub_api_token="XXXXXX", ## use your hugging face hub access token
                             model_kwargs={"temperature":0.1,"max_new_tokens":2000, "return_full_text":False}
                             )
 

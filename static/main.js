@@ -40,6 +40,7 @@ Papa.parse('/data/HHI_production_long.csv', {
     quoteChar: '"',
     escapeChar: '"',
     header: true,
+    encoding: "ISO-8859-1",
     download: true,
     skipEmptyLines: true,
     complete: function (results) {
@@ -54,6 +55,7 @@ Papa.parse('/data/HHI_reserve_long.csv', {
     quoteChar: '"',
     escapeChar: '"',
     header: true,
+    encoding: "ISO-8859-1",
     download: true,
     skipEmptyLines: true,
     complete: function (results) {
